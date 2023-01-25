@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_25_055428) do
+ActiveRecord::Schema.define(version: 2023_01_24_003129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 2023_01_25_055428) do
     t.text "avatar"
     t.text "province"
     t.text "color"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_dreams_on_user_id"
   end
 
   create_table "dreams_players", force: :cascade do |t|
@@ -56,8 +54,6 @@ ActiveRecord::Schema.define(version: 2023_01_25_055428) do
     t.text "description"
     t.text "quote"
     t.text "image"
-    t.integer "dream_id"
-    t.index ["dream_id"], name: "index_players_on_dream_id"
   end
 
   create_table "users", force: :cascade do |t|
