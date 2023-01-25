@@ -14,7 +14,7 @@
         <% end %>
 </div>
 <footer>
-    <%= link_to 'Add Player to Dream Team', dream_players_path(@dream), class: "colourbottombar" if @current_user.players.size <= 5 %>
-    <%= render :partial => 'form', class: "colourbottombar" %>
-    <a href="" class="colourbottombar">Play Opposing Team</a>
+    <%= link_to 'Add Player to Dream Team', dream_players_path(@dream) @current_user.players.size <= 5 %>
+    <%= render :partial => 'form' %>
+    <a href="">Play Opposing Team</a>
 </footer>

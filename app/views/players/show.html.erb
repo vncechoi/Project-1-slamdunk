@@ -19,8 +19,8 @@
     <% end %>
 
     <div class="controlsDraft">
-        <%= link_to 'Add to Dream Team', dreams_path(:id => @player.id), class: "colourbottombar", :method => 'post' %>
-        <%= link_to 'Edit player', edit_player_path(@player), class: "colourbottombar" %>
-        <%= link_to 'Delete player', @player, :method => 'delete', class: "colourbottombar", :data => { :confirm => 'Are you sure?' } %>
+        <%= link_to 'Add to Dream Team', dreams_path(:id => @player.id), :method => 'post' %>
+        <%= link_to 'Edit player', edit_player_path(@player) %>
+        <%= link_to 'Delete player', @player, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     </div>
 </div>

@@ -13,7 +13,7 @@
 
 
     <div class="ControlsPlayers">
-        <%= link_to 'Edit Move', edit_move_path(@move), class: "colourbottombar" %>
-        <%= link_to 'Delete Move', @move, :method => 'delete', class: "colourbottombar", :data => { :confirm => 'Are you sure?' } %>
+        <%= link_to 'Edit Move', edit_move_path(@move) %>
+        <%= link_to 'Delete Move', @move, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     </div>
 </div>

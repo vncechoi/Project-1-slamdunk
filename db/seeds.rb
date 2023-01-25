@@ -3,10 +3,10 @@ u1 = User.create :email => 'marco@ga.co', :password => 'chicken', :admin => true
 u2 = User.create :email => 'polo@ga.co', :password => "chicken"
 puts "#{ User.count } users"
 
-Dream.destroy_all
-d1 = Dream.create 
-d2 = Dream.create 
-puts "#{ Dream.count } dreams"
+# Dream.destroy_all
+# d1 = Dream.create 
+# d2 = Dream.create 
+# puts "#{ Dream.count } dreams"
 
 Player.destroy_all
 p1 = Player.create :name => 'Sakuragi Hanamichi', :position => 'Power Forward', :teamname => 'Shohoku', :playernumber => '10', :description => 'Sakuragi has a habit of making fun of other players by giving nicknames. Infamous for his odd red hair with his great resolve in basketball', :quote => "I'm tensai Sakuragi Hanamichi. I'm going to play basketball, because I'm the best basketball player", :image => 'link'
@@ -218,6 +218,6 @@ p23.moves << m133 << m134 << m135 << m136 << m137 << m138
 p24.moves << m139 << m140 << m141 << m142 << m143 << m144
 p25.moves << m145 << m146 << m147 << m148 << m149 << m150
 
-puts "Players and Dreams"
-d1.players << p1 << p2 << p3 << p4 << p5
-d2.players << p6 << p7 << p8 << p9 << p10
+# puts "Players and Dreams"
+# d1.players << p1 << p2 << p3 << p4 << p5
+# d2.players << p6 << p7 << p8 << p9 << p10

@@ -14,14 +14,14 @@
       <nav>
         <%= link_to 'Home', root_path %>
         <% if @current_user.present? %>
-          <%= link_to 'All Users', users_path, class: "colourbottombar"  if @current_user.admin?  %>
-          <%= link_to 'All Players', players_path, class: "colourbottombar" %>
-          <%= link_to 'All Moves', moves_path, class: "colourbottombar" %>
-          <%= link_to 'Dream Team', dreams_path, class: "colourbottombar" %>
-          <%= link_to "Logout #{ @current_user.email }", login_path, class: "colourbottombar", :method => 'delete' %>
+          <%= link_to 'All Users', users_path  if @current_user.admin?  %>
+          <%= link_to 'All Players', players_path %>
+          <%= link_to 'All Moves', moves_path %>
+          <%= link_to 'Dream Team', dreams_path %>
+          <%= link_to "Logout #{ @current_user.email }", login_path, :method => 'delete' %>
         <% else %>
-          <%= link_to 'Sign Up', new_user_path, class: "colourbottombar" %>
-          <%= link_to 'Sign In', login_path, class: "colourbottombar" %>
+          <%= link_to 'Sign Up', new_user_path %>
+          <%= link_to 'Sign In', login_path %>
         <% end %>
       </nav>
     
