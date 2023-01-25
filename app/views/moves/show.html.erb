@@ -1,20 +1,18 @@
-<div class="PlayerEntry">
+<div class="PlayerProfile">
     <div class="NameInPlayerMoves">
         <%= @move.name %>
     </div>
 
-    <div class="PositionInPokedexMoves">
+    <div class="PositionInPlayerMoves">
         <%= @move.category %>
     </div>
-
-        <%= image_tag @move.image, :class => 'featureMovePokedex' if @move.image.present? %>
 
     <div class="MoveDescription">
         <%= @move.description %>
     </div>
 
 
-    <div class="controlsPlayers">
+    <div class="ControlsPlayers">
         <%= link_to 'Edit Move', edit_move_path(@move), class: "colourbottombar" %>
         <%= link_to 'Delete Move', @move, :method => 'delete', class: "colourbottombar", :data => { :confirm => 'Are you sure?' } %>
     </div>

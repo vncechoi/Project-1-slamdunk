@@ -1,0 +1,14 @@
+<h1>Dream Team</h1>
+
+<div class="controls">
+    <%= link_to 'New Dream Team', new_dream_path %>
+</div>
+
+<div class="infocard">
+    <% @dreams.each do |dream| %>
+        <p>
+            <%= link_to dream.name, dream_path(dream.id) %>
+            <img class="thumbnail" src="<%= dream.image %>">
+        </p>
+    <% end %>
+</div>

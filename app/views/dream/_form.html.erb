@@ -1,4 +1,0 @@
-<%= form_for @current_user, :url => undraft_player_path do |f| %>
-    <%= f.select :players, @current_user.players.pluck(:name, :id), :include_blank => true %>
-    <%= f.submit 'Undraft Player' %>
-<% end %>

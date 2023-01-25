@@ -23,7 +23,7 @@ class PlayersController < ApplicationController
     def update
         player = Player.find params[:id]
         player.update player_params
-        redirect_to party_path
+        redirect_to players_path
     end
 
     # SHOW
@@ -38,14 +38,14 @@ class PlayersController < ApplicationController
         redirect_to players_path
     end
 
-    def release
+    def undraft
         @player = Player.find params[:user][:players]
         @current_user.players.delete @player
-        redirect_to party_path
+        redirect_to dreams_path
     end
     
     private 
     def player_params
-        params.require(:player).permit(:name, :image, :weight, :height, :description)
+        params.require(:player).permit( :name, :position, :teamname, :playernumber, :description, :quote, :image )
     end
 end

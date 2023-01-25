@@ -1,0 +1,20 @@
+<h1><%= @current_user.email %>'s Dream Team</h1>
+<div class="Dream Team">
+        <% @current_user.dreams.each do |dream| %>
+            <% dream.players.each do |player| %>
+                <div class="Dream Team">
+                    <%= player.name %>
+                        <img class="Dream Team" src="<%= player.image %>">
+                        <%= select_tag(:moves, options_for_select(player.moves.pluck(:name, :id)), :include_blank => true) %>
+                        <%= select_tag(:moves, options_for_select(player.moves.pluck(:name, :id)), :include_blank => true) %>
+                        <%= select_tag(:moves, options_for_select(player.moves.pluck(:name, :id)), :include_blank => true) %>
+                        <%= select_tag(:moves, options_for_select(player.moves.pluck(:name, :id)), :include_blank => true) %>
+                </div>
+            <% end %>
+        <% end %>
+</div>
+<footer>
+    <%= link_to 'Add Player to Dream Team', dream_players_path(@dream), class: "colourbottombar" if @current_user.players.size <= 5 %>
+    <%= render :partial => 'form', class: "colourbottombar" %>
+    <a href="" class="colourbottombar">Play Opposing Team</a>
+</footer>

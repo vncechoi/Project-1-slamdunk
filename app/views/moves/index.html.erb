@@ -8,7 +8,7 @@
     <% @moves.each do |move| %>
         <p>
             <%= link_to move.name, move_path(move.id) %>
-            <%= image_tag move.image, :class => 'featureMoves' %>
+            <img class="thumbnail" src="<%= move.image %>">
         </p>
     <% end %>
 </div>

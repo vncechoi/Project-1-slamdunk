@@ -1,10 +1,10 @@
 User.destroy_all
-u1 = User.create :email => 'joney@ga.co', :password => 'chicken', :admin => true
-u2 = User.create :email => 'craigsy@ga.co', :password => "chicken"
+u1 = User.create :email => 'marco@ga.co', :password => 'chicken', :admin => true
+u2 = User.create :email => 'polo@ga.co', :password => "chicken"
 puts "#{ User.count } users"
 
 Dream.destroy_all
-d1 = Dream.create
+d1 = Dream.create 
 d2 = Dream.create 
 puts "#{ Dream.count } dreams"
 

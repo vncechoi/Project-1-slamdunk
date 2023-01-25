@@ -1,0 +1,26 @@
+<div class="PlayDraft">
+        <div class="NameInDraft">
+            <%= @player.name %>
+        </div>
+        <div class="PositionInDraft">
+            <%= @player.position %>
+        </div>
+        <div class="TeamnameInDraft">
+            <%= @player.teamname %>
+        </div>
+        <div class="DescriptionInDraft">
+            <%= @player.description %>
+        </div>
+        <div class="QuoteInDraft">
+            <%= @player.quote %>
+        </div>
+    <% unless @player.image.nil? || @player.image.empty? %>
+        <img class="feature" src="<%= @player.image %>" alt="<%= @player.name %>">
+    <% end %>
+
+    <div class="controlsDraft">
+        <%= link_to 'Add to Dream Team', dreams_path(:id => @player.id), class: "colourbottombar", :method => 'post' %>
+        <%= link_to 'Edit player', edit_player_path(@player), class: "colourbottombar" %>
+        <%= link_to 'Delete player', @player, :method => 'delete', class: "colourbottombar", :data => { :confirm => 'Are you sure?' } %>
+    </div>
+</div>

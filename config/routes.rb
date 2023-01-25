@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
-
+  resources :dreams do
+    resources :players
+  end
   resources :users, :only => [:new, :create, :index]
   resources :players
   resources :moves
@@ -9,8 +11,8 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
-  get '/dream' => 'dream#show'
-  post '/dream' => 'dream#update'
+  get '/dreams' => 'dreams#show'
+  post '/dreams' => 'dreams#update'
 
   patch '/player/undraft' => 'players#undraft', :as => :undraft_player
 end
