@@ -15,16 +15,13 @@
   <%= f.text_field :color %>
 
   <%= label_tag 'Select up to 5 players' %>
-  <%= select_tag 'player_ids', options_for_select(Player.all.map{|player| [player.name, player.id]}), multiple: true %>
+  <%= select_tag 'player_ids', options_for_select(Player.all.map{|player| [player.name, player.id]}), multiple: true, :size => 5 %>
+  
+  <%= label_tag 'Select up to 6 moves' %>
+  <%= select_tag 'move_ids', options_for_select(Move.all.map{|move| [move.name, move.id]}), multiple: true, :size => 6 %>
 
   <%= f.submit "Create Dream Team" %>
 <% end %>
 
-
-  <h2>Select moves for each player</h2>
-  <% @dream.players.each do |player| %>
-    <%= label_tag player.name %>
-    <%= select_tag "moves_for_#{player.id}", options_for_select(player.moves.pluck(:name, :id)), multiple: true, include_blank: true %>
-  <% end %>
 
 
