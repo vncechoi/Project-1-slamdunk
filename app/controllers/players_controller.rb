@@ -16,32 +16,26 @@ class PlayersController < ApplicationController
 
     # EDIT
     def edit
-        @player = Player.find params[:id]
+        @player = Player.find (params[:id])
     end
 
     # UPDATE
     def update
-        player = Player.find params[:id]
+        player = Player.find (params[:id])
         player.update player_params
         redirect_to players_path
     end
 
     # SHOW
     def show
-        @player = Player.find params[:id]
+        @player = Player.find (params[:id])
     end
 
     # DESTROY
     def destroy
-        player = Player.find params[:id]
+        player = Player.find (params[:id])
         player.destroy
         redirect_to players_path
-    end
-
-    def undraft
-        @player = Player.find params[:user][:players]
-        @current_user.players.delete @player
-        redirect_to dreams_path
     end
     
     private 

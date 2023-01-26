@@ -1,6 +1,8 @@
 <div class="homepage">
     <h1>Dream Team Viewer</h1>
-    <div class="homepagetext">
-    Welcome back <%= @current_user.email if @current_user.present? %>
+    <h4>  Welcome <%= @current_user.email if @current_user.present? %> </h4>
+    <div class="homepagetext">s
+    <%= image_tag("homepagephoto.jpg", :alt => "A description of the image") %>
     </div> 
+
 </div>

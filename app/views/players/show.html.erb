@@ -1,25 +1,25 @@
-<div class="PlayDraft">
-        <div class="NameInDraft">
-            <%= @player.name %>
-        </div>
-        <div class="PositionInDraft">
-            <%= @player.position %>
-        </div>
-        <div class="TeamnameInDraft">
-            <%= @player.teamname %>
-        </div>
-        <div class="PlayernumberInDraft">
-            <%= @player.playernumber %>
-        </div>
-        <div class="DescriptionInDraft">
-            <%= @player.description %>
-        </div>
-        <div class="QuoteInDraft">
-            <%= @player.quote %>
-        </div>
+<div style="display: inline-block"class="PlayDraft">
     <% unless @player.image.nil? || @player.image.empty? %>
         <img class="feature" src="<%= @player.image %>" alt="<%= @player.name %>">
     <% end %>
+        <div class="NameInDraft">
+            Name: <%= @player.name %>
+        </div>
+        <div class="PositionInDraft">
+           Position: <%= @player.position %>
+        </div>
+        <div class="TeamnameInDraft">
+           Team Name: <%= @player.teamname %>
+        </div>
+        <div class="PlayernumberInDraft">
+           Player Number: <%= @player.playernumber %>
+        </div>
+        <div class="DescriptionInDraft">
+           Description: <%= @player.description %>
+        </div>
+        <div class="QuoteInDraft">
+           Quote: <%= @player.quote %>
+        </div>
 
     <div class="controlsDraft">
         <%= link_to 'Add to Dream Team', dreams_path(:id => @player.id), :method => 'post' %>

@@ -24,4 +24,37 @@
 <% end %>
 
 
+<h1><%= @current_user.email %>'s Dream Teams</h1>
+
+<% @current_user.dreams.each do |dream| %>
+  <div class="dream-team">
+    <h2><%= dream.name %></h2>
+    <img src="<%= dream.avatar %>" alt="<%= dream.name %>'s avatar">
+    <p>Province: <%= dream.province %></p>
+    <p>Color: <%= dream.color %></p>
+
+    <h3>Players</h3>
+    <ul>
+    <% dream.players.each do |player| %>
+      <li>
+        <%= link_to player.name, player_path(player.id) %>
+        <img src="<%= player.image %>" alt="<%= player.name %>'s image">
+        <ul>
+          <% player.moves.each do |move| %>
+            <li>
+            <%= link_to move.name, move_path(move.id) %>
+            <img src="<%= move.image %>" alt="<%= move.name %>'s image">
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    </ul>
+
+    <%= link_to "Edit Dream Team", edit_dream_path(dream) %>
+    <%= link_to "Delete Dream Team", dream_path(dream), method: :delete, data: { confirm: "Are you sure you want to delete this dream team?" } %>
+
+  </div>
+<% end %>
+<%= link_to 'Create a new Dream Team', new_dream_path %>
 

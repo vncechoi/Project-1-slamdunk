@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: doexpn3dt
+  api_key: '985299886315174'
+  api_secret: iigHzbwO3ozFoiTt6nh59aWUt_o
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: doexpn3dt
+  api_key: '985299886315174'
+  api_secret: iigHzbwO3ozFoiTt6nh59aWUt_o
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: doexpn3dt
+  api_key: '985299886315174'
+  api_secret: iigHzbwO3ozFoiTt6nh59aWUt_o
+  enhance_image_tag: true
+  static_file_support: false

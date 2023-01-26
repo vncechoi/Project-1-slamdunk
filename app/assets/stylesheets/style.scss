@@ -1,145 +1,142 @@
+// Variables
+$primary-color: #B22222;
+$secondary-color: #000000;
+$tertiary-color: hsl(0, 0%, 0%);
+$text-color: #ffffff;
+
+// Global Styles
 body {
-    background-image: url("/assets/wallpaper1.jpg");
-    background-size: cover;
-    background-color: rgb(229, 216, 43);
-    font-family: 'Source Serif Pro', serif;
-    color: rgb(83, 169, 198);
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+background-color: $secondary-color;
+background-image: url(https://i.ytimg.com/vi/0z2rKXhDtSA/maxresdefault.jpg);
+font-family: 'Source Serif Pro', serif;
+color: $text-color;
+min-height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
+// Navigation Styles
+nav {
+padding-top: 10px;
+padding-bottom: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: $primary-color;
 a {
-    color: rgb(215, 137, 58);
-    font-size: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 10px;
+color: $text-color;
+font-size: 16px;
+padding-left: 10px;
+padding-right: 10px;
+text-decoration: none;
+&:hover {
+color: $secondary-color;
+}
+}
 }
 
+// Container Styles
 .container {
-    background-color: rgb(42, 41, 41);
-    border-color: rgb(83, 169, 198);
-    border: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 55%;
-    margin: 0 auto;
-    padding: 10px;
+background-color: rgba(0,0,0,.5);
+// border: 2px solid $primary-color;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+width: 80%;
+margin: 0 auto;
+padding: 10px;
 }
 
+// Headings Styles
+h1, h2 {
+font-family: 'Permanent Marker';
+color: $text-color;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 15px;
+}
 h1 {
-    font-family: 'Permanent Marker';
-    color: rgb(215, 137, 58);
-    font-size: 52px;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+font-size: 52px;
 }
 h2 {
-    text-align: center;
+font-size: 36px;
 }
 
-label{
-    display: block;
-    font-size: 16px;
+// Form Styles
+label {
+display: block;
+font-size: 16px;
+margin-bottom: 5px;
 }
-
-.thumb {
-    height: 10em;
-}
-
-.feature {
-    max-height: 30em;
-}
-
 form {
-    padding: 0 auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0 20px;
 }
 
-nav {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.controls {
-    font-weight: bold;
-    font-size: 20px;
-}
-
+// Footer Styles
 footer {
-    padding-top: 10px;
+padding-top: 10px;
+text-align: center;
+background-color: $primary-color;
+color: $text-color;
 }
 
+// Gallery Styles
 .gallery {
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 auto;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+.thumb {
+height: 10em;
 }
+.feature {
+max-height: 30em;
+}
+}
+
+// Checkbox Styles
 .checkbox {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 auto;
-
+display: flex;
+align-items: center;
+input[type="checkbox"] {
+margin-right: 10px;
+}
 }
 
-.nav {
-    text-decoration: none;
+// Additional Styles
+.controls {
+font-weight: bold;
+font-size: 20px;
 }
 
-#artist_info {
-    width: 320px;
-    height: 90px;
+// Media Queries
+@media (max-width: 600px) {
+.container {
+width: 90%;
+}
 }
 
+@media (max-width: 400px) {
+h1 {
+font-size: 36px;
+}
+h2 {
+font-size: 24px;
+}
+}
 
-/* NAVIGATION DROPDOWN MENU */
+// Background image
 
-.dropbtn {
-    background-color:rgb(42, 41, 41);
-    color: rgb(215, 137, 58);
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #f1f1f1
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown:hover .dropbtn {
-    background-color: rgb(124, 73, 22);
-  }
+body {
+    background-image: url(https://i.ytimg.com/vi/0z2rKXhDtSA/maxresdefault.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+    }
+    
+    

@@ -1,5 +1,4 @@
 class DreamsController < ApplicationController
-    
     def new
         @dream = Dream.new
     end
@@ -20,18 +19,17 @@ class DreamsController < ApplicationController
 
     def undraft_player
         @dream = @current_user.dreams.find(params[:dream_id])
-        @player = Player.find(params[:id])
+        @player = Player.find(params[:player_id])
         @dream.players.delete(@player)
         redirect_to :back
-    end
+    end    
   
-    def add_players
+    def add_player
         @dream = @current_user.dreams.find(params[:id])
-        @player = @dream.players.find(params[:player_id])
-        @dream.players << @players
+        @players = Player.find(params[:player_ids])
+        @dream.players += @players
         redirect_to dream_path(@dream)
     end
-
 
     def destroy
         dream = Dream.find params[:id]
@@ -52,7 +50,46 @@ class DreamsController < ApplicationController
         render 'new'
       end
     end
-  
+
+    # def select_move
+    #     @dream = Dream.find(params[:dream_id])
+    #     @player = @dream.players.find(params[:player_id])
+    #     @move = Move.find(params[:move_id])
+    #     @player.move = @move
+    #     @player.save
+    #     redirect_to dream_path(@dream)
+    # end
+    
+    # def edit_move
+    #     @dream = Dream.find(params[:dream_id])
+    #     @player = @dream.players.find(params[:player_id])
+    #     @move = @player.move
+    # end
+    
+    # def update_move
+    #     @dream = Dream.find(params[:dream_id])
+    #     @player = @dream.players.find(params[:player_id])
+    #     @move = @player.move
+    #     if @move.update(move_params)
+    #       redirect_to dream_path(@dream)
+    #     else
+    #     render :edit_move
+    #     end
+    # end
+    
+    # def delete_move
+    #     @dream = Dream.find(params[:dream_id])
+    #     @player = @dream.players.find(params[:player_id])
+    #     @move = @player.move
+    #     @move.destroy
+    #     redirect_to dream_path(@dream)
+    # end
+      
+    # private
+    # def move_params
+    #     params.require(:move).permit(:name, :image)
+    # end
+
     private
   
     def dream_params

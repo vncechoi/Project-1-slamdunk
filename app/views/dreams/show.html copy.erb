@@ -23,13 +23,14 @@
     <% end %>
     </ul>
 
-    <%= form_tag(undraft_player_path) do %>
+    <%= form_tag(undraft_player_path(dream, player), method: :patch) do %>
       <h2>Undraft Player</h2>
-      <%= select_tag(:player_id, options_for_select(@dream.players.pluck(:name, :id)), :include_blank => true) %>
+      <%= hidden_field_tag :dream_id, dream.id %>
+      <%= select_tag(:player_id, options_for_select(dream.players.pluck(:name, :id)), :include_blank => true) %>
       <%= submit_tag "Undraft Player" %>
     <% end %>
 
-    <%= form_tag(update_dream_path(@dream), method: :patch) do %>
+    <%= form_tag(add_player_dream_path(dream, player), method: :patch) do %>
       <h2>Add Players</h2>
       <%= select_tag(:player_ids, options_for_select(Player.all.map{|player| [player.name, player.id]}), multiple: true) %>
       <%= submit_tag "Add Players" %>
