@@ -1,5 +1,30 @@
-<%= form_for @current_user, :url => undraft_player_path do |f| %>
-    <%= f.select :players, @current_user.players.pluck(:name, :id), :include_blank => true %>
-    <%= f.submit 'Undraft Player' %>
+<h2>Create Dream Team</h2>
+<%= form_for @dream do |f| %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :avatar %>
+  <%= f.text_field :avatar %>
+
+  <%= f.label :province %>
+  <%= f.text_field :province %>
+
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+
+  <%= label_tag 'Select up to 5 players' %>
+  <%= select_tag 'player_ids', options_for_select(Player.all.map{|player| [player.name, player.id]}), multiple: true %>
+
+  <%= f.submit "Create Dream Team" %>
 <% end %>
+
+
+  <h2>Select moves for each player</h2>
+  <% @dream.players.each do |player| %>
+    <%= label_tag player.name %>
+    <%= select_tag "moves_for_#{player.id}", options_for_select(player.moves.pluck(:name, :id)), multiple: true, include_blank: true %>
+  <% end %>
+
 

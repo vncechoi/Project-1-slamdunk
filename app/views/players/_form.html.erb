@@ -1,13 +1,15 @@
-<h1>Index Player</h1>
 <%= form_for @player do |f| %>
     <%= f.label :name  %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
 
     <%= f.label :position %>
     <%= f.text_field :position %>
 
     <%= f.label :teamname %>
     <%= f.text_field :teamname %>
+
+    <%= f.label :playernumber %>
+    <%= f.text_field :playernumber %>
 
     <%= f.label :description %>
     <%= f.text_field :description %> 

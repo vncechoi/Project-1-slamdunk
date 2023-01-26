@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_24_003129) do
+ActiveRecord::Schema.define(version: 2023_01_26_003021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2023_01_24_003129) do
     t.text "avatar"
     t.text "province"
     t.text "color"
+    t.integer "user_id"
   end
 
   create_table "dreams_players", force: :cascade do |t|

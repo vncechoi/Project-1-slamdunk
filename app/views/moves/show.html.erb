@@ -1,19 +1,22 @@
 <div class="PlayerProfile">
-    <div class="NameInPlayerMoves">
-        <%= @move.name %>
-    </div>
+        <div class="NameInPlayerMoves">
+            <%= @move.name %>
+        </div>
 
-    <div class="PositionInPlayerMoves">
-        <%= @move.category %>
-    </div>
+        <div class="PositionInPlayerMoves">
+            <%= @move.category %>
+        </div>
 
-    <div class="MoveDescription">
-        <%= @move.description %>
-    </div>
+        <div class="MoveDescription">
+            <%= @move.description %>
+        </div>
 
+    <% unless @move.image.nil? || @move.image.empty? %>
+        <img class="feature" src="<%= @move.image %>" alt="<%= @move.name %>">
+    <% end %>
 
-    <div class="ControlsPlayers">
-        <%= link_to 'Edit Move', edit_move_path(@move) %>
-        <%= link_to 'Delete Move', @move, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-    </div>
+        <div class="ControlsPlayers">
+            <%= link_to 'Edit Move', edit_move_path(@move) %>
+            <%= link_to 'Delete Move', @move, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+        </div>
 </div>
