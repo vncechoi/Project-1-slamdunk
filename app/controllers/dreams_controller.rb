@@ -11,6 +11,7 @@ class DreamsController < ApplicationController
     def update
         dream = Dream.find params[:id]
         dream.update dream_params
+        redirect_to dreams_path
     end
 
     def edit
@@ -50,45 +51,6 @@ class DreamsController < ApplicationController
         render 'new'
       end
     end
-
-    # def select_move
-    #     @dream = Dream.find(params[:dream_id])
-    #     @player = @dream.players.find(params[:player_id])
-    #     @move = Move.find(params[:move_id])
-    #     @player.move = @move
-    #     @player.save
-    #     redirect_to dream_path(@dream)
-    # end
-    
-    # def edit_move
-    #     @dream = Dream.find(params[:dream_id])
-    #     @player = @dream.players.find(params[:player_id])
-    #     @move = @player.move
-    # end
-    
-    # def update_move
-    #     @dream = Dream.find(params[:dream_id])
-    #     @player = @dream.players.find(params[:player_id])
-    #     @move = @player.move
-    #     if @move.update(move_params)
-    #       redirect_to dream_path(@dream)
-    #     else
-    #     render :edit_move
-    #     end
-    # end
-    
-    # def delete_move
-    #     @dream = Dream.find(params[:dream_id])
-    #     @player = @dream.players.find(params[:player_id])
-    #     @move = @player.move
-    #     @move.destroy
-    #     redirect_to dream_path(@dream)
-    # end
-      
-    # private
-    # def move_params
-    #     params.require(:move).permit(:name, :image)
-    # end
 
     private
   

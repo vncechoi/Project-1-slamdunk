@@ -9,11 +9,11 @@
   - PostgreSQL
   - Heroku
 
-## Architecture and models
+## MODELS
     
 The user has a many relationship with the dream team. The dream team has a many to many relationship with players, and belongs to the one user. The player has a many to many relationship with moves and dreams. Moves has a many to many relationship to players. 
 
-## Improvement ideas & additional features
+## NEEDS IMPROVING FOR SURE!
  - User aren't able to select players and move in a more humanly way instead of having to command click
  - CSS for the website is lacking, the moves list and players list could be formed in rows to display in a more efficient manner
  - Additional features would be the ability to be able compete with other players in an actual with the player 

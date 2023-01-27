@@ -3,35 +3,29 @@ class PlayersController < ApplicationController
         @players = Player.all
     end
 
-    # NEW
     def new
         @player = Player.new
     end
 
-    # Create
     def create
         player = Player.create player_params
         redirect_to players_path(player.id) # GET request to SHOW 
     end
 
-    # EDIT
     def edit
         @player = Player.find (params[:id])
     end
 
-    # UPDATE
     def update
         player = Player.find (params[:id])
         player.update player_params
         redirect_to players_path
     end
 
-    # SHOW
     def show
         @player = Player.find (params[:id])
     end
 
-    # DESTROY
     def destroy
         player = Player.find (params[:id])
         player.destroy

@@ -23,19 +23,6 @@
     <% end %>
     </ul>
 
-    <%= form_tag(undraft_player_path(dream, player), method: :patch) do %>
-      <h2>Undraft Player</h2>
-      <%= hidden_field_tag :dream_id, dream.id %>
-      <%= select_tag(:player_id, options_for_select(dream.players.pluck(:name, :id)), :include_blank => true) %>
-      <%= submit_tag "Undraft Player" %>
-    <% end %>
-
-    <%= form_tag(add_player_dream_path(dream, player), method: :patch) do %>
-      <h2>Add Players</h2>
-      <%= select_tag(:player_ids, options_for_select(Player.all.map{|player| [player.name, player.id]}), multiple: true) %>
-      <%= submit_tag "Add Players" %>
-    <% end %>
-
     <%= link_to "Edit Dream Team", edit_move_path(@dream) %>
     <%= link_to "Delete Dream Team", @dream, method => 'delete', data: { confirm: "Are you sure you want to delete this dream team?" } %>
   </div>
