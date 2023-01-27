@@ -1,27 +1,27 @@
-<div style="display: inline-block"class="PlayDraft">
+<div class="Draft">
     <% unless @player.image.nil? || @player.image.empty? %>
         <img class="feature" src="<%= @player.image %>" alt="<%= @player.name %>">
     <% end %>
-        <div class="NameInDraft">
+        <div class="Name">
             Name: <%= @player.name %>
         </div>
-        <div class="PositionInDraft">
+        <div class="Position">
            Position: <%= @player.position %>
         </div>
-        <div class="TeamnameInDraft">
+        <div class="Teamname">
            Team Name: <%= @player.teamname %>
         </div>
-        <div class="PlayernumberInDraft">
+        <div class="Playernumber">
            Player Number: <%= @player.playernumber %>
         </div>
-        <div class="DescriptionInDraft">
+        <div class="Description">
            Description: <%= @player.description %>
         </div>
-        <div class="QuoteInDraft">
+        <div class="Quote">
            Quote: <%= @player.quote %>
         </div>
 
-    <div class="controlsDraft">
+    <div class="controls">
         <%= link_to 'Add to Dream Team', dreams_path(:id => @player.id), :method => 'post' %>
         <%= link_to 'Edit player', edit_player_path(@player) %>
         <%= link_to 'Delete player', @player, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>

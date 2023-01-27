@@ -1,6 +1,21 @@
 <div class="homepage">
     <h1>Dream Team Viewer</h1>
-    <h4>  Welcome <%= @current_user.email if @current_user.present? %> </h4>
+    <h2>  Welcome <%= @current_user.email if @current_user.present? %> </h2>
+    <h4>  Form your own unique line up for the new Slam Dunk league! 
+    <li>Sign up!</li>
+    <li>Complete detalis for your Dream Team</li>
+    <li>Draft your players!</li>
+    <li>Pick your moves for each player!</li>
+    <li>Compete with other Dream Teams!</li>
+    </h4>
+
+    <h4> Injured functions 
+    <li>To multi select, user must highlight multiple player before submit instead of clicking </li>
+    <li>Moves cannot be selected from other players right now, can only select from the respective player </li>
+    </h4>
+
+
+
     <div class="homepagetext">s
     <%= image_tag("homepagephoto.jpg", :alt => "A description of the image") %>
     </div> 

@@ -1,11 +1,11 @@
 <h1>Index Player</h1>
 <div class="controls">
-    <%= link_to 'New Player', new_player_path(@player) %>
+    <%= link_to 'New Player', new_player_path(@player), class: "a-primary"  %>
 </div>
 <div class="infocard">
     <% @players.each do |player| %>
         <p>
-            <%= link_to player.name, player_path(player.id) %>
+            <%= link_to player.name, player_path(player.id), class: "a-primary"  %>
             <img class="thumbnail" src="<%= player.image %>">
         </p>   
     <% end %>

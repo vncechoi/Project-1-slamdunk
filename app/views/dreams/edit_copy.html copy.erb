@@ -35,8 +35,8 @@
       <%= submit_tag "Add Players" %>
     <% end %>
 
-    <%= link_to "Edit Dream Team", edit_dream_path(@dream) %>
-    <%= link_to "Delete Dream Team", dream_path(@dream), method: :delete, data: { confirm: "Are you sure you want to delete this dream team?" } %>
+    <%= link_to "Edit Dream Team", edit_dream_path(@dream), class: "a-primary"  %>
+    <%= link_to "Delete Dream Team", dream_path(@dream), method: :delete, data: { confirm: "Are you sure you want to delete this dream team?" }, class: "a-primary"  %>
   </div>
 <% end %>
 
